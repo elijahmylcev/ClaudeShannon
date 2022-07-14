@@ -28,10 +28,23 @@ function App() {
     return array
   }
 
+  function convertToDecimal(numberBinary) {
+    let result = 0;
+    let degree = numberBinary.length - 1;
+    for(let i = 0; i < numberBinary.length; i++) {
+      result += +numberBinary[i] * Math.pow(2, degree)
+      degree--;
+    }
+    return result
+  }
+
+  const example = convertToDecimal(arrayNumbers(100)[3])
+  console.log(example);
+
   console.log(arrayNumbers(100));
   return (
     <div className="App">
-      <h1>Hello: {arrayNumbers(100)[1]}</h1>
+      <h1>Hello: {arrayNumbers(100)[0]}</h1>
     </div>
   );
 }

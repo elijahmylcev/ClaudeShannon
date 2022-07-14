@@ -1,15 +1,30 @@
 import './App.css';
 
 function App() {
-  let num = 28;
-  let binary = (num % 2).toString(5);
-  for (; num > 1; ) {
-    num = parseInt(num / 2);
-    binary =  (num % 2) + (binary);
+  function convertToBinary(number) {
+    let num = number;
+    let binary = (num % 2).toString();
+    for (; num > 1; ) {
+      num = parseInt(num / 2);
+      binary =  (num % 2) + (binary);
+    }
+    return binary
   }
+
+  const arrayNumbers = (right) => {
+    let i = 1;
+    const array = [];
+    while (i <= right) {
+      array.push(convertToBinary(i))
+      i++
+    }
+    return array
+  }
+
+  console.log(arrayNumbers(100));
   return (
     <div className="App">
-      <h1>Hello: {binary}</h1>
+      <h1>Hello: {arrayNumbers}</h1>
     </div>
   );
 }

@@ -8,6 +8,13 @@ function App() {
       num = parseInt(num / 2);
       binary =  (num % 2) + (binary);
     }
+    if (binary.length < 7) {
+      let zero = 7 - binary.length
+      while(zero !== 0) {
+        binary = '0' + binary;
+        zero--;
+      }
+    }
     return binary
   }
 
@@ -24,7 +31,7 @@ function App() {
   console.log(arrayNumbers(100));
   return (
     <div className="App">
-      <h1>Hello: {arrayNumbers}</h1>
+      <h1>Hello: {arrayNumbers(100)[1]}</h1>
     </div>
   );
 }

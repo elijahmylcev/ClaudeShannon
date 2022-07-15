@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import './App.css';
 import Card from './Card';
 
 function App() {
   const baseArray = arrayNumbers(100);
+  const [cardNumber, setCardNumber] = useState(7);
+  const [answers, setAnswers] = useState([]);
 
   function createCards(base, amountCards) {
     const cards = {};
@@ -62,24 +65,18 @@ function App() {
     return array.filter(element => element[base] === '1')
   }
 
+
   return (
     <div className="App">
       <h1>Загадайте любое число от 1 до 100</h1>
       <div>
-      <Card array={cards[1]}/>
+        <Card array={cards[cardNumber]}/>
 
-
-      <div className="buttons">
-        <button>Yes</button>
-        <button>Next Card ⇒ </button>
-      </div>
-        {/* {
-          cards[6].map(card => (
-            <ul>
-              <li>{card}</li>
-            </ul>
-          ))
-        } */}
+        <div className="buttons">
+          <button>Yes</button>
+          <button>No</button>
+          {cardNumber !== 1 && <button onClick={() => setCardNumber(cardNumber - 1)}>Next Card ⇒ </button>}
+        </div>
       </div>
     </div>
   );

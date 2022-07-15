@@ -67,6 +67,12 @@ function App() {
       <h1>Загадайте любое число от 1 до 100</h1>
       <div>
       <Card array={cards[1]}/>
+
+
+      <div className="buttons">
+        <button>Yes</button>
+        <button>Next Card ⇒ </button>
+      </div>
         {/* {
           cards[6].map(card => (
             <ul>

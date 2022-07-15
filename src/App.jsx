@@ -1,4 +1,5 @@
 import './App.css';
+import Card from './Card';
 
 function App() {
   const baseArray = arrayNumbers(100);
@@ -15,9 +16,6 @@ function App() {
   }
 
   const cards = createCards(baseArray, 7);
-  console.log(cards);
-
-  const firstCard = convertToDecimal(sortCards(baseArray, 6));
 
   function convertToBinary(number) {
     let num = number;
@@ -66,14 +64,17 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello: Угадаю любое число от 1 до 100</h1>
-      <ul>
-        {
-          firstCard.map(num => 
-            <li>{num}</li>
-          )
-        }
-      </ul>
+      <h1>Загадайте любое число от 1 до 100</h1>
+      <div>
+      <Card array={cards[1]}/>
+        {/* {
+          cards[6].map(card => (
+            <ul>
+              <li>{card}</li>
+            </ul>
+          ))
+        } */}
+      </div>
     </div>
   );
 }

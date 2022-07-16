@@ -1,13 +1,13 @@
-import './card.scss'
+import './card.scss';
 
 function Card(props) {
-  return ( 
+  return (
     <div className="card">
-      {props.array.map(number => (
-        <div key={number} className='card__element'>{number}</div>
+      {props.array.map((number) => (
+        <div key={number} className="card__element">{number}</div>
       ))}
     </div>
-   );
+  );
 }
 
 export default Card;

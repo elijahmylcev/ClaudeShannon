@@ -8,13 +8,12 @@ function App() {
   const [result, setResult] = useState(0);
 
   function convertToDecimal(array) {
-    array.map((el) => {
+    return array.map((el) => {
       let res = 0;
       let degree = el.length - 1;
       for (let i = 0; i < el.length; i++) {
         res += +el[i] * 2 ** degree;
         degree--;
-        console.log(degree);
       }
       return res;
     });
@@ -62,10 +61,7 @@ function App() {
   }
 
   const baseArray = arrayNumbers(100);
-  console.log(convertToDecimal(baseArray));
-
   const cards = createCards(baseArray, 7);
-  console.log(cards);
 
   function changeCard() {
     if (cardNumber === 1) {

@@ -2,7 +2,6 @@ import './card.scss';
 
 function Card(props) {
   const { array } = props;
-  console.log(array, props);
   return (
     <div className="card">
       {array.map((number) => (

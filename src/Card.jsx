@@ -1,9 +1,11 @@
 import './card.scss';
 
 function Card(props) {
+  const { array } = props;
+  console.log(array, props);
   return (
     <div className="card">
-      {props.array.map((number) => (
+      {array.map((number) => (
         <div key={number} className="card__element">{number}</div>
       ))}
     </div>

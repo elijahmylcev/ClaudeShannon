@@ -46,6 +46,7 @@
           "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }],
           "no-return-assign": "off",
           "no-plusplus": "off",
-          "react/prop-types": "off"
+          "react/prop-types": "off",
+          "radix": "off"
   }
 }

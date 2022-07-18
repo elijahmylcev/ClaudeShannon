@@ -5,6 +5,7 @@ import Card from './Card';
 function App() {
   const [cardNumber, setCardNumber] = useState(7);
   const [answers, setAnswers] = useState([]);
+  const [calcIndicator, setCalcIndicator] = useState(false);
   const [result, setResult] = useState(0);
 
   function convertToDecimal(array) {
@@ -64,41 +65,51 @@ function App() {
   const cards = createCards(baseArray, 7);
 
   function changeCard() {
-    if (cardNumber === 1) {
-      setResult(() => answers.reduce((a, b) => a + b));
+    if (cardNumber === 0) {
+      setCalcIndicator(true);
     }
     setCardNumber(cardNumber - 1);
   }
 
+  if (calcIndicator) {
+    setResult(() => answers.reduce((a, b) => a + b));
+    setCalcIndicator(false);
+  }
+
+  console.log(result);
+
   return (
     <div className="App">
-      {!result
-        && (
+
+      {!result ? (
         <div>
-          <h1>Загадайте любое число от 1 до 100</h1>
-          <div>
-            <Card array={cards[cardNumber]} />
-            <div className="buttons">
-              <button
-                type="button"
-                onClick={() => {
-                  setAnswers((prevState) => [...prevState, cards[cardNumber][0]]);
-                  changeCard();
-                }}
-              >
-                Yes
-              </button>
-              <button
-                type="button"
-                onClick={changeCard}
-              >
-                No
-              </button>
-            </div>
+          <Card array={cards[cardNumber]} />
+          <div className="buttons">
+            <button
+              type="button"
+              onClick={() => {
+                setAnswers((prevState) => [...prevState, cards[cardNumber][0]]);
+                changeCard();
+              }}
+            >
+              Yes
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setAnswers((prevState) => [...prevState, 0]);
+                changeCard();
+              }}
+            >
+              No
+            </button>
           </div>
         </div>
-        )}
+      ) : (
+        <div>{result}</div>
+      )}
     </div>
   );
 }
+
 export default App;

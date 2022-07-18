@@ -43,7 +43,7 @@
             "off" ,
             { "allowAsProps": false }
           ],
-          "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }],
+          "consistent-return": "off",
           "no-return-assign": "off",
           "no-plusplus": "off",
           "react/prop-types": "off",

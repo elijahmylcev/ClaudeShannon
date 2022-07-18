@@ -5,7 +5,7 @@ import Card from './Card';
 function App() {
   const [cardNumber, setCardNumber] = useState(7);
   const [answers, setAnswers] = useState([]);
-  const [calcIndicator, setCalcIndicator] = useState(false);
+  // const [calcIndicator, setCalcIndicator] = useState(false);
   const [result, setResult] = useState(0);
 
   function convertToDecimal(array) {
@@ -65,18 +65,16 @@ function App() {
   const cards = createCards(baseArray, 7);
 
   function changeCard() {
-    if (cardNumber === 0) {
-      setCalcIndicator(true);
-    }
     setCardNumber(cardNumber - 1);
   }
 
-  if (calcIndicator) {
+  if (cardNumber === 0) {
     setResult(() => answers.reduce((a, b) => a + b));
-    setCalcIndicator(false);
+    console.log(result);
+    setCardNumber(7);
   }
 
-  console.log(result);
+  console.log(cardNumber);
 
   return (
     <div className="App">
@@ -106,7 +104,13 @@ function App() {
           </div>
         </div>
       ) : (
-        <div>{result}</div>
+        <div>
+          <h2>
+            Вы загадали число:
+            {' '}
+            {result}
+          </h2>
+        </div>
       )}
     </div>
   );

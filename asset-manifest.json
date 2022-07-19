@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ClaudeShannon/static/css/main.b67aa477.css",
-    "main.js": "/ClaudeShannon/static/js/main.1d25a5c8.js",
+    "main.css": "/ClaudeShannon/static/css/main.a0259e45.css",
+    "main.js": "/ClaudeShannon/static/js/main.4c79384d.js",
     "index.html": "/ClaudeShannon/index.html",
-    "main.b67aa477.css.map": "/ClaudeShannon/static/css/main.b67aa477.css.map",
-    "main.1d25a5c8.js.map": "/ClaudeShannon/static/js/main.1d25a5c8.js.map"
+    "main.a0259e45.css.map": "/ClaudeShannon/static/css/main.a0259e45.css.map",
+    "main.4c79384d.js.map": "/ClaudeShannon/static/js/main.4c79384d.js.map"
   },
   "entrypoints": [
-    "static/css/main.b67aa477.css",
-    "static/js/main.1d25a5c8.js"
+    "static/css/main.a0259e45.css",
+    "static/js/main.4c79384d.js"
   ]
 }

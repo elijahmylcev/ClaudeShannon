@@ -1,4 +1,4 @@
-import Card from '../../Card';
+import Card from '../Card/Card';
 
 function CardsList({
   cardNumber, cards, setAnswers, changeCard, backToStart,

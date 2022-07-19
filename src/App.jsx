@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import './App.css';
 import Card from './Card';
-import Start from './components/Start';
+import CardsList from './components/CardsList/CardsList';
+import ResultComponent from './components/ResultComponent/ResultComponent';
+import Start from './components/Start/Start';
 
 function App() {
   const [cardNumber, setCardNumber] = useState(7);
@@ -84,38 +86,15 @@ function App() {
     <div className="App">
       {start ? <Start onStart={onStart} /> : null}
       {(!result && !start) ? (
-        <div>
-          <Card array={cards[cardNumber]} />
-          <div className="buttons">
-            <button
-              type="button"
-              onClick={() => {
-                setAnswers((prevState) => [...prevState, cards[cardNumber][0]]);
-                changeCard();
-              }}
-            >
-              Yes
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setAnswers((prevState) => [...prevState, 0]);
-                changeCard();
-              }}
-            >
-              No
-            </button>
-          </div>
-        </div>
+        <CardsList
+          cardNumber={cardNumber}
+          cards={cards}
+          setAnswers={setAnswers}
+          changeCard={changeCard}
+        />
       ) : null}
       {result ? (
-        <div>
-          <h2>
-            Вы загадали число:
-            {' '}
-            {result}
-          </h2>
-        </div>
+        <ResultComponent result={result} />
       ) : null}
     </div>
   );

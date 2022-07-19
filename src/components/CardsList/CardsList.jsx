@@ -1,7 +1,7 @@
 import Card from '../../Card';
 
 function CardsList({
-  cardNumber, cards, setAnswers, changeCard,
+  cardNumber, cards, setAnswers, changeCard, backToStart,
 }) {
   return (
     <div>
@@ -14,7 +14,7 @@ function CardsList({
             changeCard();
           }}
         >
-          Yes
+          Тут есть
         </button>
         <button
           type="button"
@@ -23,7 +23,14 @@ function CardsList({
             changeCard();
           }}
         >
-          No
+          Тута нету
+        </button>
+
+        <button
+          type="button"
+          onClick={() => backToStart()}
+        >
+          Сбился:( Хочу попробовать с начала!
         </button>
       </div>
     </div>

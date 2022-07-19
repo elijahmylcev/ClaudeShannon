@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './App.css';
-import Card from './Card';
 import CardsList from './components/CardsList/CardsList';
 import ResultComponent from './components/ResultComponent/ResultComponent';
 import Start from './components/Start/Start';
@@ -73,13 +72,18 @@ function App() {
 
   if (cardNumber === 0) {
     setResult(() => answers.reduce((a, b) => a + b));
-    console.log(result);
     setCardNumber(7);
   }
 
   function onStart() {
     setStart(false);
-    console.log(1);
+  }
+
+  function backToStart() {
+    setCardNumber(7);
+    setAnswers([]);
+    setResult(0);
+    setStart(true);
   }
 
   return (
@@ -91,10 +95,14 @@ function App() {
           cards={cards}
           setAnswers={setAnswers}
           changeCard={changeCard}
+          backToStart={backToStart}
         />
       ) : null}
       {result ? (
-        <ResultComponent result={result} />
+        <ResultComponent
+          result={result}
+          backToStart={backToStart}
+        />
       ) : null}
     </div>
   );

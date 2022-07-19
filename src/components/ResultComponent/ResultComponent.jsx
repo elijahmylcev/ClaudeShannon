@@ -1,4 +1,4 @@
-function ResultComponent({ result }) {
+function ResultComponent({ result, backToStart }) {
   return (
     <div>
       <h2 className="result">
@@ -7,7 +7,7 @@ function ResultComponent({ result }) {
         {result}
       </h2>
 
-      <button type="button">Вернуться на главную страницу</button>
+      <button type="button" onClick={() => backToStart()}>Вернуться на главную страницу</button>
 
     </div>
   );

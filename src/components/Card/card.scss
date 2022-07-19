@@ -5,6 +5,7 @@
   grid-template-columns: repeat(10, auto);
   grid-auto-rows: auto;
   &__element {
+    text-align: center;
     padding: 20px;
     font-size: 40px;
     border: 1px solid rgb(102, 170, 0);;

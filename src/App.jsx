@@ -83,7 +83,7 @@ function App() {
   return (
     <div className="App">
       {start ? <Start onStart={onStart} /> : null}
-      {/* {!result ? (
+      {(!result && !start) ? (
         <div>
           <Card array={cards[cardNumber]} />
           <div className="buttons">
@@ -107,7 +107,8 @@ function App() {
             </button>
           </div>
         </div>
-      ) : (
+      ) : null}
+      {result ? (
         <div>
           <h2>
             Вы загадали число:
@@ -115,7 +116,7 @@ function App() {
             {result}
           </h2>
         </div>
-      )} */}
+      ) : null}
     </div>
   );
 }

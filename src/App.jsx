@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import './App.css';
 import Card from './Card';
+import Start from './components/Start';
 
 function App() {
   const [cardNumber, setCardNumber] = useState(7);
   const [answers, setAnswers] = useState([]);
-  // const [calcIndicator, setCalcIndicator] = useState(false);
+  const [start, setStart] = useState(true);
   const [result, setResult] = useState(0);
 
   function convertToDecimal(array) {
@@ -74,12 +75,14 @@ function App() {
     setCardNumber(7);
   }
 
-  console.log(cardNumber);
+  function onStart() {
+    setStart(false);
+  }
 
   return (
     <div className="App">
-
-      {!result ? (
+      {start ? <Start onStart={onStart} /> : null}
+      {/* {!result ? (
         <div>
           <Card array={cards[cardNumber]} />
           <div className="buttons">
@@ -111,7 +114,7 @@ function App() {
             {result}
           </h2>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

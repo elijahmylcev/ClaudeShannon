@@ -3,7 +3,7 @@ import './start.scss';
 function Start({ onStart }) {
   return (
     <div className="start">
-      <h1>Welcome!</h1>
+      <h1>Добро пожаловать!</h1>
       <div className="description">
         Вашему вниманию представлена скромная реализация классического фокуса!
         {' '}

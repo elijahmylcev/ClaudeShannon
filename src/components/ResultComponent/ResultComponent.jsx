@@ -1,3 +1,5 @@
+import './ResultComponent.scss';
+
 function ResultComponent({ result, backToStart }) {
   return (
     <div>
@@ -7,7 +9,13 @@ function ResultComponent({ result, backToStart }) {
         {result}
       </h2>
 
-      <button type="button" onClick={() => backToStart()}>Вернуться на главную страницу</button>
+      <button
+        className="result-btn"
+        type="button"
+        onClick={() => backToStart()}
+      >
+        Вернуться на главную страницу
+      </button>
 
     </div>
   );

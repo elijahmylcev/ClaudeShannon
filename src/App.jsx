@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './App.css';
 import CardsList from './components/CardsList/CardsList';
 import ResultComponent from './components/ResultComponent/ResultComponent';
 import Start from './components/Start/Start';

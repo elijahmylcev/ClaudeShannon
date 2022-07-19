@@ -77,6 +77,7 @@ function App() {
 
   function onStart() {
     setStart(false);
+    console.log(1);
   }
 
   return (

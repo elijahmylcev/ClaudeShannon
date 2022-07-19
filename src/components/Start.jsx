@@ -1,7 +1,6 @@
 import './start.scss';
 
-function Start(onStart) {
-  console.log(onStart);
+function Start({ onStart }) {
   return (
     <div className="start">
       <h1>Welcome!</h1>
@@ -16,7 +15,7 @@ function Start(onStart) {
 
       <div className="query">Теперь загадайте любое натуральное число от 0 до 100 и начнем!</div>
 
-      <button type="button">Начать</button>
+      <button type="button" onClick={() => onStart()}>Начать</button>
     </div>
   );
 }

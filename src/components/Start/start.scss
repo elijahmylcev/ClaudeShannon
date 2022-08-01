@@ -1,9 +1,19 @@
 .start {
   max-width: 1100px;
   margin: 0 auto;
+  h1 {
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 10px solid green;
+    width: 18ch;
+  }
   .description {
     margin-top: 20px;
     margin-bottom: 40px;
+    font-family: monospace;
+    white-space: nowrap;
+    // border-right: 10px solid green;
+
   }
   &-btn {
     margin-top: 20px;
